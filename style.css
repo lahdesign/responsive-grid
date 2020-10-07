@@ -1,0 +1,79 @@
+*{
+    padding: 0;
+    margin: 0;
+    /* border-style: dashed; */
+    box-sizing: border-box;
+    }
+
+  /* @media screen and (max-width: 600px) {
+  .container {
+      height: 100%;
+      display: grid;
+      grid-gap: 3px;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: 
+          "q"
+          "h"
+          "e"
+          "b"
+          "f";
+  }
+   */
+  /* step two - build your grid desktop and tablet grid*/
+  .container {
+      height: 100%;
+      display: grid;
+      grid-gap: 3px;
+      /* this will be  the same for everyone */
+      grid-template-columns: repeat(2, 1fr);
+      /* this will be customized, based on your grid, use pixels or % */
+      grid-template-rows: auto;
+      /* use letters from step 1 to build the grid */
+      grid-template-areas: 
+          "h h"
+          "x e"
+          "x w"
+          "f f";
+  }
+  
+  /* step three - build your mobile grid, what becomes active when the pixels are 800px or less */
+  @media screen and (max-width: 800px) {
+  
+      .container{
+          display: grid;
+          grid-gap: 3px;
+          /* grid is only one column, keep this way */
+          grid-template-columns: 1fr;
+          /* you can enter values, or auto will adjust the box sizes based on content */
+          grid-template-rows: auto;
+          grid-template-areas:
+          "h"
+          "e"
+          "w"
+          "x"
+          "f";
+      }
+  }
+  
+  /* step 1 - write in each of your sections and assign each of your sections a letter */
+
+  header {
+      grid-area: h;
+  }
+  
+  .work{
+      grid-area: w;
+  }
+  
+  .education {
+      grid-area: e;
+  }
+  
+  .experience {
+      grid-area: x;
+  }
+  
+  footer{
+      grid-area: f;
+  }
